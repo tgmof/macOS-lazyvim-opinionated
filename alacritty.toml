@@ -1,0 +1,26 @@
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 14.0
+
+[font.normal]
+family = "FiraCode Nerd Font"
+style = "Regular"
+
+[font.bold]
+family = "FiraCode Nerd Font"
+style = "Bold"
+
+[Window]
+startup_mode = "Maximized"
+
+[keyboard]
+bindings = [
+    { key = "V", mods = "Control", action = "Paste" },
+    { key = "Escape", mods = "Shift", action = "ToggleViMode" }
+]
+# below commands are useful to setup the "ctrl+c to copy" and remap the "ctrl+c to interrupt a program" to ctrl+shift+c
+#{ key = "C", mods = "Control", action = "Copy" }, 
+#{ key = "C", mods = "Control|Shift", chars = "\u0003" }
+# BUT: Commented out because I recommend you to use Terminals INSIDE neovim instead (<space>fn then :terminal OR <space>ft if you're into splits)
