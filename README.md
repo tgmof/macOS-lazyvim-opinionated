@@ -1,4 +1,4 @@
-# wsl-lazyvim-opinionated
+# macOS-lazyvim-opinionated
 
 An opinionated setup for neovim/lazyvim noob that come from VSCode and wants to avoid figuring things out and be able to start using neovim/lazyvim "quickly" and "learn by doing" the details on the way.
 
