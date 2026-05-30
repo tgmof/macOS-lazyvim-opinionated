@@ -2,7 +2,7 @@ if command -v brew >/dev/null 2>&1; then
   echo "Homebrew is already in PATH; skipping install."
 else
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  printf '\neval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"' >>~/.bashrc
+  printf '\neval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"' >>~/.zshrc
 fi
 
 if [ -d /Applications/Alacritty.app ]; then
@@ -12,6 +12,8 @@ else
   hdiutil attach hdiutil attach Alacritty-v0.17.0.dmg
   sudo cp -R /Volumes/Alacritty/Alacritty.app /Applications/
 fi
+# Make Neovim an app-like bundle so that you can start neovim to edit a file from Finder (https://www.reddit.com/r/Ghostty/comments/1hsvjtg/comment/m61htlo/?context=3&share_id=mN8755Rz7x_1gHHC9aVISl)
+sudo cp -R ./Neovim.app /Applications/
 # Install tools required by basic LazyVim setup
 brew install jq fd neovim lazygit ripgrep
 # Install node since many LSP rely on it
@@ -34,4 +36,4 @@ rm -rf ~/.config/nvim
 mkdir -p ~/.config
 cp -r nvim/ ~/.config/nvim/
 
-echo "When you feel ready, add export EDITOR='nvim' in your ~/.bashrc so that neovim becomes your default editor"
+echo "When you feel ready, add export EDITOR='nvim' in your ~/.zshrc and open txt/code/md/csv files (Right Click > Get Info > Open with > Neovim.app > Change All) so that neovim becomes your default editor"
