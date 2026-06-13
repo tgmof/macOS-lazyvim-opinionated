@@ -36,4 +36,11 @@ rm -rf ~/.config/nvim
 mkdir -p ~/.config
 cp -r nvim/ ~/.config/nvim/
 
-echo "When you feel ready, add export EDITOR='nvim' in your ~/.zshrc and open txt/code/md/csv files (Right Click > Get Info > Open with > Neovim.app > Change All) so that neovim becomes your default editor"
+cat <<EOF
+When you feel ready, add:
+export EDITOR='nvim'
+export VISUAL="nvim --cmd 'let g:flatten_wait=1'"
+in your ~/.zshrc and open txt/code/md/csv files (Right Click > Get Info > Open with > Neovim.app > Change All)
+so that neovim becomes your default editor (the VISUAL trick is meant specifically to be able to <C-x><C-e> in
+a neovim terminal so that it opens a temporary buffer to edit your command but avoid the 'vim in vim' issue.
+EOF
