@@ -12,7 +12,7 @@ style = "Regular"
 family = "FiraCode Nerd Font"
 style = "Bold"
 
-[Window]
+[window]
 startup_mode = "Maximized"
 
 [keyboard]
